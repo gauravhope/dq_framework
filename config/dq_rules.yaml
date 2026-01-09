@@ -1,1 +1,17 @@
+rules:
+  - rule_id: DQ_POLICY_001
+    entity: policy
+    column: policy_id
+    rule_type: not_null
+    rule_expression: "policy_id IS NOT NULL"
+    severity: critical
+    applies_to: [batch, stream]
+
+  - rule_id: DQ_POLICY_002
+    entity: policy
+    column: age
+    rule_type: range
+    rule_expression: "age BETWEEN 18 AND 90"
+    severity: warning
+    applies_to: [batch, stream]
 
